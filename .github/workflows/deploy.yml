@@ -15,11 +15,9 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          export PATH="/home/deployer/.bun/bin:$PATH"
+        script: | 
           cd /var/www/nuit-et-jour
           git fetch origin && git reset --hard origin/master
           bun install
           bun run build
-          bunx pm2 ls
-          bunx pm2 reload bun
+          bunx pm2 reload nuit-et-jour-backend
