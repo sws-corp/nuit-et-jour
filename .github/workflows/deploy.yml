@@ -16,6 +16,8 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: | 
+          export BUN_INSTALL="$HOME/.bun"
+          export PATH="$BUN_INSTALL/bin:$PATH"
           cd /var/www/nuit-et-jour
           git fetch origin && git reset --hard origin/master
           bun install
