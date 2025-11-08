@@ -21,4 +21,5 @@ jobs:
           git fetch origin && git reset --hard origin/master
           bun install
           bun run build
+          bunx pm2 ls
           bunx pm2 reload bun
