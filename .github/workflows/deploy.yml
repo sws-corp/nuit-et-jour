@@ -15,15 +15,10 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
-        env:
-          USER: ${{ secrets.USER }}
-          PATH: ${{ secrets.PATH }}
-
         script: |
           export PATH="/home/deployer/.bun/bin:$PATH"
           cd /var/www/nuit-et-jour
           git fetch origin && git reset --hard origin/master
           bun install
           bun run build
-          sudo -u $USER $PATH reload test
+          sudo /home/deployer/.bun/bin/pm2 reload test
