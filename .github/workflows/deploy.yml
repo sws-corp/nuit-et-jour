@@ -18,6 +18,7 @@ jobs:
         script: | 
           export BUN_INSTALL="$HOME/.bun"
           export PATH="$BUN_INSTALL/bin:$PATH"
+          export PM2_HOME=/etc/pm2daemon
           cd /var/www/nuit-et-jour
           git fetch origin && git reset --hard origin/master
           bun install
