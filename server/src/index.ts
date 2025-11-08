@@ -7,7 +7,7 @@ export const app = new Hono()
 .use(cors())
 
 .get("/", (c) => {
-	return c.text("Hello Tornado !");
+	return c.text("Hello SWS Team !");
 })
 
 .get("/hello", async (c) => {
