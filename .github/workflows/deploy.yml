@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ master ] # (Changez en 'main' si c'est votre branche)
+    branches: [ master ]
 
 jobs:
   deploy:
