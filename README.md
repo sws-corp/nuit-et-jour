@@ -1,4 +1,4 @@
-![cover](https://files.catbox.moe/2egcbh.webp)
+![cover](.github/assets/stack.png)
 
 
 Nuit et Jour is our stack made for the [Nuit de l'info](https://www.nuitdelinfo.com/) 
